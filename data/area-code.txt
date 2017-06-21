@@ -1,0 +1,19 @@
+﻿[
+	{
+		"areaCode":"01",
+		"areaName":"一区"
+	},
+	{
+		"areaCode":"02",
+		"areaName":"二区"
+	},
+	{
+		"areaCode":"03",
+		"areaName":"三区"
+	},
+	{
+		"areaCode":"04",
+		"areaName":"房间"
+	}
+]
+

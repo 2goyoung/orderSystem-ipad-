@@ -1,0 +1,172 @@
+﻿<div class="os-top">
+    <img src="theme/default/images/logo.png" class="m-logo" /><a href="javascript:void(0)" class="btn-logout"></a></div>
+<div class="c-banner">
+    <div class="shadow"></div>
+    <nav class="select-area">
+        
+            <script id="template-area-code" type="text/template">
+                <ul>
+                <%_.each(datas,function(item,index){%>
+                    <%if(index==0){%>
+                        <li class="active" areaCode=<%= item.areaCode %>><%= item.areaName %></li>
+                    <%}else{%>
+
+                        <li areaCode=<%= item.areaCode %>><%= item.areaName %></li>
+                    <%}%>
+                <%})%>
+                </ul>
+        </script>
+
+        
+    </nav>
+    <div class="user">张三四（工号0001）</div>
+</div>
+<section class="c-content">
+    <div class="c-inner">
+        <nav class="select-sub">
+            <div class="os-tab table-status">
+                <ul class="os-tab-list">
+                    <li class="active" din-state="all">全部</li>
+                    <li din-state="0">空台</li>
+                    <li din-state="2">预留台</li>
+                </ul>
+                <div class="os-tab-shadow"></div>
+            </div>
+
+            <div class="os-tab table-contain">
+                <ul class="os-tab-list">
+                    <li class="active" din-num="all">不限</li>
+                    <li din-num="10">10人台</li>
+                    <li din-num="6">6人台</li>
+                    <li din-num="2">2人台</li>
+                    <li din-num="0">房间</li>
+                </ul>
+                <div class="os-tab-shadow"></div>
+            </div>
+        </nav>
+
+        <div class="table-content-wrap">
+            <script id="template-list-wrap" type="text/template">
+                <%_.each(code,function(item,index){%>
+                    <div class="table-content" area-code=<%= item.areaCode%>><i class="i-loading"></i></div>
+                <%})%>
+            </script>
+            <script id="template-table-list" type="text/template">
+                    <ul class="table-list">
+                        <%_.each(tableList,function(item,index){%>
+                        
+                            <%if(item.dinType==1){%>
+                                <%if(item.dinState==0){%>
+                                    <li din-code=<%=item.dinCode%> din-num=<%= item.dinNum %> din-type=<%= item.dinType %> din-state=<%=item.dinState%> >
+                                        <div class="t-table t-free">
+                                            <div class="st">空台</div>
+                                            <div class="ct"><%= item.dinNum %></div>
+                                        </div>
+                                        <div class="t-num"><%= item.dinAddress %></div>
+                                    </li>
+                                <%}else if(item.dinState==1){%>
+                                    <li din-code=<%=item.dinCode%> din-num=<%= item.dinNum %> din-type=<%= item.dinType %> din-state=<%=item.dinState%> >
+                                        <div class="t-table t-repast">
+                                            <div class="time" start-time=<%= item.dinStartTime %> ><span>0:00</span></div>
+                                            <div class="st">就餐中</div>
+                                            <div class="ct"><%= item.dinNum %></div>
+                                        </div>
+                                        <div class="t-num"><%= item.dinAddress %></div>
+                                    </li>
+                                <%}else if(item.dinState==2){%>
+                                    <li din-code=<%=item.dinCode%> din-num=<%= item.dinNum %> din-type=<%= item.dinType %> din-state=<%=item.dinState%> >
+                                        <div class="t-table t-reserve">
+                                            <div class="st">预留</div>
+                                            <div class="ct"><%= item.dinNum %></div>
+                                        </div>
+                                        <div class="t-num"><%= item.dinAddress %></div>
+                                    </li>
+                                <%}%>
+
+                            <%}else if(item.dinType==3){%>
+                                
+                                <%if(item.dinState==0){%>
+                                    <li din-code=<%=item.roomCode%> din-num=<%= item.dinNum %> din-type=<%= item.dinType %> din-state=<%=item.dinState%> >
+                                        <div class="t-table t-free">
+                                            <div class="st">空房</div>
+                                            <div class="ct"><%= item.dinNum %></div>
+                                            <div class="i-room"></div>
+                                        </div>
+                                        <div class="t-num"><%= item.roomName %></div>
+                                    </li>
+                                <%}else if(item.dinState==1){%>
+                                    <li din-code=<%=item.roomCode%> din-num=<%= item.dinNum %> din-type=<%= item.dinType %> din-state=<%=item.dinState%> >
+                                        <div class="t-table t-repast">
+                                            <div class="time"><span>0:30</span></div>
+                                            <div class="st">就餐中</div>
+                                            <div class="ct"><%= item.dinNum %></div>
+                                            <div class="i-room"></div>
+                                        </div>
+                                        <div class="t-num"><%= item.roomName %></div>
+                                    </li>
+                                <%}else if(item.dinState==2){%>
+                                    <li din-code=<%=item.roomCode%> din-num=<%= item.dinNum %> din-type=<%= item.dinType %> din-state=<%=item.dinState%> >
+                                        <div class="t-table t-reserve">
+                                            <div class="st">预留</div>
+                                            <div class="ct"><%= item.dinNum %></div>
+                                            <div class="i-room"></div>
+                                        </div>
+                                        <div class="t-num"><%= item.roomName %></div>
+                                    </li>
+                                <%}%>
+
+                            <%}%>
+                    
+                        <%})%>
+                        <li class="justify-fix">&nbsp;</li>
+                        <li class="justify-fix">&nbsp;</li>
+                        <li class="justify-fix">&nbsp;</li>
+                        <li class="justify-fix">&nbsp;</li>
+                        <li class="justify-fix">&nbsp;</li>
+                        <li class="justify-fix">&nbsp;</li>
+                        <li class="justify-fix">&nbsp;</li>
+                        <li class="justify-fix">&nbsp;</li>
+                        <li class="justify-fix">&nbsp;</li>
+                        <li class="justify-fix">&nbsp;</li>
+                    </ul>
+            </script>
+        </div>
+    </div>
+</section>
+<div class="c-panel">
+    <div class="t">
+        <div class="table"><span>台号</span><span class="table-num">001</span></div>
+        <div class="r-info">
+            <h5>开台服务</h5>
+            <div class="info">
+                <div class="bg-layer"></div>
+                <span class="teas">茶位类：<i>0/10</i> </span>
+                <span class="count">小计：￥<i>0.00</i></span>
+            </div>
+        </div>
+    </div>
+    <div class="item-title">
+        <span class="name">茶品</span>
+        <span class="price">价格</span>
+        <span class="amount">数量</span>
+    </div>
+    <div id="teas-list" class="teas-list-wrap">
+        <ul class="teas-list"></ul>
+        <!--茶品列表模版-->
+        <script id="template-tea-list" type="text/template">
+                <span class="name"><%= dishName %></span>
+                <span class="price" p="<%= salePrices[0].price %>">￥<%= salePrices[0].price %>/<%= salePrices[0].saleUnitName %></span>
+                <span class="amount">
+                    <a href="javascript:void(0)" class="add btn-orange-2">+1</a>
+                    <a href="javascript:void(0)" class="minus btn-gray-2">-1</a>
+                    <select></select>
+                </span>
+        </script>
+    </div>
+
+    <div class="btns">
+        <a href="javascript:void(0);" class="btn-cancel">取消</a>
+        <a href="javascript:void(0);" class="btn-ok">确定</a>
+    </div>
+</div>
+

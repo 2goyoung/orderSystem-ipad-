@@ -1,0 +1,152 @@
+﻿<div class="os-top"><a href="javascript:void(0);" class="page-back">返回</a><img src="theme/default/images/logo.png" class="m-logo"/>
+        <div class="top-order-info">
+            <div class="inner">
+                <span class="item">已点菜品：<span class="num" id="din-count">0</span></span>
+                <span class="item">小计：<span class="count">￥<span id="din-price">0.00</span></span></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="os-menu-nav">
+         <div class="wrap">
+             <ul class="menu-nav-list">
+                 <script id="template-din-cat" type="text/template">
+
+                        <%if(dishType=="特色菜品"){%>
+                            <div class="nav-item"><div class="icon red"><i class="icon-c"></i></div><span class="text"><%=dishType%></span></div><div>
+                        <%}else if(dishType=="套餐"){%>
+                            <div class="nav-item"><div class="icon green"><i class="icon-m"></i></div><span class="text"><%=dishType%></span></div><div>
+                        <%}else{%>
+                            <div class="nav-item"><div class="icon orange"><i class="icon-n"></i></div><span class="text"><%=dishType%></span></div></div>
+                        <%}%>
+                 </script>
+             </ul>
+         </div>
+    </div>
+    <div class="os-menu-main">
+        <div class="top">
+            <form>
+                <div class="lf-search"><input type="search"  placeholder="菜名、拼音助记码、菜品编码"/></div>
+            </form>
+            <div class="rt-info">
+                <div class="no">台号：<span class="table-num">000</span></div>
+                <div class="num">人数：<span class="person-num">00</span>人</div>
+                <div class="time">就餐时间：<span class="order-time">00:00</span></div>
+            </div>
+        </div>
+        <!--<div class="sub-classify">
+            <ul>
+                <li>子分类一</li>
+                <li>子分类二</li>
+                <li>子分类三</li>
+                <li class="active">子分类四</li>
+                <li>子分类五</li>
+                <li>子分类六</li>
+                <li>子分类七</li>
+                <li>子分类八</li>
+                <li>子分类九</li>
+                <li>子分类十</li>
+                <li>子分类十一</li>
+                <li>子分类十二</li>
+            </ul>
+            <div class="first-arrow"><i></i></div>
+            <div class="last-arrow"><i></i></div>
+        </div>-->
+        <div class="food-content">
+            <script id="template-din-list-wrap" type="text/template">
+                <div class="food-list-wrap">
+                    <ul class="food-list">
+                        <li class="justify-fix">&nbsp;</li>/n
+                        <li class="justify-fix">&nbsp;</li>/n
+                        <li class="justify-fix">&nbsp;</li>/n
+                        <li class="justify-fix">&nbsp;</li>/n
+                        <li class="justify-fix">&nbsp;</li>/n
+                        <li class="justify-fix">&nbsp;</li>/n
+                        <li class="justify-fix">&nbsp;</li>/n
+                        <li class="justify-fix">&nbsp;</li>/n
+                        <li class="justify-fix">&nbsp;</li>/n
+                        <li class="justify-fix">&nbsp;</li>/n
+                    </ul>
+                    <i class="i-loading"></i>
+                    <div class="cover-layer"></div>
+                </div>
+            </script>
+            <script id="template-din-list" type="text/template">
+                <%if(total+ordNum==0){%>
+                <div class="food-wrap">
+                <%}else{%>
+                <div class="food-wrap in-order">
+                <%}%>
+                    <div class="order-num">+<%=total+ordNum%></div>
+                    <div class="food-inner">
+                        <img src=<%=smallPicPath%> width="210" height="150"/>
+                        <%if(salePrices.length==1){%>
+                            <span class="food-info"> <%=dishName%>&nbsp;&nbsp;<span class="price"><%=salePrices[0].price%>元/<%=salePrices[0].saleUnitName%></span></span>
+                        <%}else{%>
+                            <%_.each(salePrices,function(item,index){%>
+                                <%if(item.saleType=="1"){%>
+                                    <span class="food-info"> <%=dishName%>&nbsp;&nbsp;<span class="price"><span class="old-price"><%=item.price%></span>元/<%=item.saleUnitName%></span></span>
+                                <%}else if(item.saleType=="5"){%>
+                                    <span class="new-price">￥<%=item.price%></span>
+                                <%}%>
+                            <%})%>
+                        <%}%>
+                    </div>
+                </div>
+                <div class="food-btns">
+                    <a href="javascript:void(0)" class="add btn-orange-2">+1</a>
+                    <a href="javascript:void(0)" class="minus btn-gray-2">-1</a>
+                    <select>
+                        <%_.each(_.range(total,total+ordNum>10?total+ordNum+1:11),function(item,index){%>
+                            <%if(item==total+ordNum){%>
+                                <option selected="selected"><%=item%></option>
+                            <%}else{%>
+                                <option><%=item%></option>
+                            <%}%>
+                        <%});%>
+                    </select>
+                </div> 
+            </script>
+
+            <script id="template-din-detail-item" type="text/template">
+                    <div class="img"></div>
+                    <img src=<%=bigPicPath%> />
+                    <div class="item-detail">
+                        <h3 class="name"><%=dishName%></h3>
+                        <table><tr><td>烹饪介绍：</td><td><%=cook%></td></tr></table>
+                        <div class="btns">
+                            <a href="javascript:void(0)" class="add btn-orange-2">+1</a>
+                            <a href="javascript:void(0)" class="minus btn-gray-2">-1</a>
+                            <select>
+                                <%_.each(_.range(total,total+ordNum>10?total+ordNum+1:11),function(item,index){%>
+                                    <%if(item==total+ordNum){%>
+                                        <option selected="selected"><%=item%></option>
+                                    <%}else{%>
+                                        <option><%=item%></option>
+                                    <%}%>
+                                <%});%>
+                            </select>
+                        </div>
+                    </div>
+                    <%if(total+ordNum!=0){%>
+                        <div class="corner"><span class="order-num"><%=total+ordNum%></span></div>
+                    <%}else{%>
+                        <div class="corner hide-item"><span class="order-num">0</span></div>
+                    <%}%>
+            </script>
+            <div class="food-list-wrap menu-banner-wrap food-active" has-data="true">
+                <ul class="menu-banner">
+                    <li><img src="images/banner/menu-1.jpg" /></li>
+                    <li><img src="images/banner/menu-2.jpg" /></li>
+                    <li><img src="images/banner/menu-1.jpg" /></li>
+                </ul>
+            </div>
+            
+            <div class="din-item-detail">
+                <div class="wrap"></div>
+                <a href="javascript:void(0);" class="btn-close"></a>
+            </div>
+            
+        </div>
+        
+    </div>

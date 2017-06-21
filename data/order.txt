@@ -1,0 +1,66 @@
+﻿{
+	"ordId":"20130520",
+	"ordDishInfo":[
+		{
+		"dishId":"t01",
+		"dishName":"铁观音（普通）",
+		"cuisine":"cuisine001",
+		"typeId":"type001",
+		"typeName":"茶位", 
+		"total":"2",
+		"state":"2",
+		"stateName":"已下单",
+		"orderTime":"2013-05-20 17:22:36",   
+		"saleType":"1",
+		 "saleUnit":"", 
+		 "saleUnitName":"位", 
+	     "price":"5.00" ,
+		 "odId":"" 
+		},
+		{
+		"dishId":"d001",
+		"dishName":"测试1",
+		"cuisine":"cuisine001",
+		"typeId":"type001",
+		"total":"2",
+		"state":"2",
+		"stateName":"已下单",
+		"orderTime":"2013-05-20 17:22:36",   
+		"saleType":"1",
+		 "saleUnit":"", 
+		 "saleUnitName":"份", 
+	     "price":"45.00" ,
+		 "odId":"" 
+		},
+		{
+		"dishId":"d002",
+		"dishName":"测试2",
+		"cuisine":"cuisine001",
+		"typeId":"type001",
+		"total":"3",
+		"state":"0",
+		"stateName":"已下单",
+		"orderTime":"2013-05-20 17:22:36",   
+		"saleType":"1",
+		 "saleUnit":"", 
+		 "saleUnitName":"份", 
+	     "price":"38.00" ,
+		 "odId":"" 
+		},
+		{
+		"dishId":"d003",
+		"dishName":"测试3",
+		"cuisine":"cuisine001",
+		"typeId":"type003",
+		"total":"3",
+		"state":"3",
+		"stateName":"已确认",
+		"orderTime":"2013-05-20 17:22:36",   
+		"saleType":"1",
+		 "saleUnit":"", 
+		 "saleUnitName":"份", 
+	     "price":"58.00" ,
+		 "odId":"" 
+		}
+	] 
+ }

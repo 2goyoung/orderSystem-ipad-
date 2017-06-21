@@ -1,0 +1,41 @@
+﻿CACHE MANIFEST
+  
+# version 0.0.31
+# AddType text/cache-manifest manifest 
+#application/octet-stream
+
+NETWORK:
+*
+
+CACHE:
+#css
+./css/os-all.css
+./css/os-layout.css
+./css/os-animate.css
+
+#js
+./js/extend/cxui-page.js
+./js/extend/iscroll.js
+./js/extend/md5.js
+./js/extend/zepto.livequery.min.js
+./js/library/underscore.js
+./js/library/backbone-1.0.0.js
+./js/library/zepto.min.js
+./js/system/os-Collection.js
+./js/system/os-Model.js
+./js/system/os-View.js
+./js/os-common.js
+./js/os-config.js
+ 
+#image
+./images/loading.gif
+./images/bg-body.png
+./images/os-bg.jpg
+./images/os-bg-hdpi.jpg
+./images/icons/icon-user.png
+./images/icons/icon-user-hdpi.png
+
+#html
+/index.html
+
+FALLBACK:

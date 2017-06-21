@@ -1,0 +1,482 @@
+﻿/*点餐系统页面动画效果 只支持webkit内核浏览器*/
+
+/*os loading bar animation*/
+/*
+.os-loading-bar .sphere {
+    -webkit-animation: slide 1.75s ease-in-out infinite alternate;
+    animation: slide 1.75s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes slide {
+    to { margin-left: 90%; }
+}
+@keyframes slide {
+    to { margin-left: 90%; }
+}
+*/
+#os-page { 
+    -webkit-perspective: 800;
+    -webkit-transform-style: preserve-3d;
+}
+#os-page[cxpage=guide],#os-page[cxpage=menu] { -webkit-backface-visibility:hidden;}
+.msbox { -webkit-animation: msbox 0.5s ease-in-out }
+@-webkit-keyframes msbox
+{
+0% { -webkit-transform: scale(0.01) }
+60% { -webkit-transform: scale(1.05) }
+80% { -webkit-transform: scale(0.95) }
+100% { -webkit-transform: scale(1.00) }
+}
+/*table-list*/
+.table-list li.transition { 
+    -webkit-transition:-webkit-transform ease-out .5s;
+    transition:transform ease-out .5s;
+}
+li.pop.out { 
+    -webkit-transform: scale(.2) !important;
+    -webkit-animation-duration: 500ms !important;
+    -webkit-animation-name:tablepopout !important;
+}
+li.pop.in { 
+    -webkit-transform: scale(1) !important;
+    -webkit-animation-duration: 500ms !important;
+    -webkit-animation-name:tablepopin !important;
+}
+.show {
+    display:inline-block !important;
+}
+@-webkit-keyframes tablepopout {
+    from {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: scale(.2);
+        opacity: 0;
+    }
+}
+@-webkit-keyframes tablepopin {
+    from {
+        -webkit-transform: scale(.2);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/*引导页图标放大*/
+.magnify { 
+    visibility:visible !important;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 600ms;
+	-webkit-animation-name: magnify;
+}
+@-webkit-keyframes magnify {
+    from {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: scale(2);
+        opacity: 0;
+    }
+}
+/*订单页 列表出现效果*/
+.list-silder { 
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 600ms;
+	-webkit-animation-name: listsilder;
+}
+@-webkit-keyframes listsilder {
+    from {
+        opacity:0;
+    }
+    to {
+        margin-left:0;
+        opacity: 1;
+    }
+}
+/*菜品列表切换*/
+.din-out { 
+    -webkit-animation-duration: 1000ms;
+	-webkit-animation-name: dinout;
+}
+.din-in { 
+    -webkit-animation-duration: 1000ms;
+	-webkit-animation-name: dinin;
+    z-index:150;
+}
+@-webkit-keyframes dinout {
+    from { 
+        opacity: .6;
+        -webkit-transform: translate3d(0 ,0, 0)  scale(1);
+    }
+   to { 
+        opacity:.3;
+        -webkit-transform: translate3d(0, 0, 0) scale(1);
+    }
+
+}
+@-webkit-keyframes dinin {
+    0% { 
+        -webkit-transform:translate3d(-100%, 0, 0) scale(.6);
+    }
+    40% { 
+        -webkit-transform: translate3d(0 ,0, 0) scale(.6);
+    }
+    100% { 
+         -webkit-transform: translate3d(0 ,0, 0) scale(1);
+    }
+
+}
+
+/*菜品出现动画*/
+.din-show { 
+    -webkit-animation-duration: 800ms;
+	-webkit-animation-name: dinshow;
+}
+@-webkit-keyframes dinshow {
+    0% { 
+        opacity:0;
+        -webkit-transform:translate3d(0, 30px, 0);
+    }
+    100% { 
+        opacity:1;
+        -webkit-transform:translate3d(0, 0, 0);
+    }
+}
+
+/*Common Page animation*/
+.out {
+	-webkit-animation-timing-function: ease-in;
+	-webkit-animation-duration: 125ms;
+}
+.in {
+	-webkit-animation-timing-function: ease-out;
+	-webkit-animation-duration: 350ms;
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@-webkit-keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.fade.out {
+	opacity: 0;
+	-webkit-animation-duration: 125ms;
+	-webkit-animation-name: fadeout;
+}
+.fade.in {
+	opacity: 1;
+	-webkit-animation-duration: 225ms;
+	-webkit-animation-name: fadein;
+}
+.pop {
+	-webkit-transform-origin: 50% 50%;
+}
+
+.pop.out {
+	-webkit-animation-name: popout;
+	opacity: 0;
+	-webkit-animation-duration: 200ms;
+}
+.pop.in {
+	-webkit-transform: scale(1);
+    opacity: 1;
+	-webkit-animation-name: popin;
+	-webkit-animation-duration: 350ms;
+}
+.pop.in.reverse {
+	-webkit-animation-name: fadein;
+}
+.pop.out.reverse {
+	-webkit-transform: scale(.8);
+	-webkit-animation-name: popout;
+}
+@-webkit-keyframes popin {
+    from {
+        -webkit-transform: scale(.8);
+        opacity: 0;
+    }
+    to {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes popout {
+    from {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        -webkit-transform: scale(.8);
+        opacity: 0;
+    }
+}
+
+/* keyframes for slidein from sides */
+@-webkit-keyframes slideinfromright {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(0); }
+}
+@-webkit-keyframes slideinfromleft {
+    from { -webkit-transform: translateX(-100%); }
+    to { -webkit-transform: translateX(0); }
+}
+
+/* keyframes for slideout to sides */
+@-webkit-keyframes slideouttoleft {
+    from { -webkit-transform: translateX(0); }
+    to { -webkit-transform: translateX(-100%); }
+}
+@-webkit-keyframes slideouttoright {
+    from { -webkit-transform: translateX(0); }
+    to { -webkit-transform: translateX(100%); }
+}
+.slide.out, .slide.in {
+	-webkit-animation-timing-function: ease-out;
+	-webkit-animation-duration: 350ms;
+}
+.slide.out {
+	-webkit-transform: translateX(-100%);
+	-webkit-animation-name: slideouttoleft;
+}
+.slide.in {
+	-webkit-transform: translateX(0);
+	-webkit-animation-name: slideinfromright;
+}
+.slide.out.reverse {
+	-webkit-transform: translateX(100%);
+	-webkit-animation-name: slideouttoright;
+}
+.slide.in.reverse {
+	-webkit-transform: translateX(0);
+	-webkit-animation-name: slideinfromleft;
+}
+.slidefade.out {
+	-webkit-transform: translateX(-100%);
+	-webkit-animation-name: slideouttoleft;
+	-webkit-animation-duration: 225ms;
+}
+.slidefade.in {
+	-webkit-transform: translateX(0);
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration: 200ms;
+}
+.slidefade.out.reverse {
+	-webkit-transform: translateX(100%);
+	-webkit-animation-name: slideouttoright;
+	-webkit-animation-duration: 200ms;
+}
+.slidefade.in.reverse {
+	-webkit-transform: translateX(0);
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration: 200ms;
+}
+/* slide down */
+.slidedown.out {
+	-webkit-animation-name: fadeout;
+	-webkit-animation-duration: 100ms;
+}
+.slidedown.in {
+	-webkit-transform: translateY(0);
+	-webkit-animation-name: slideinfromtop;
+	-webkit-animation-duration: 250ms;
+}
+.slidedown.in.reverse {
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration: 150ms;
+}
+.slidedown.out.reverse {
+	-webkit-transform: translateY(-100%);
+	-webkit-animation-name: slideouttotop;
+	-webkit-animation-duration: 200ms;
+}
+@-webkit-keyframes slideinfromtop {
+    from { -webkit-transform: translateY(-100%); }
+    to { -webkit-transform: translateY(0); }
+}
+@-webkit-keyframes slideouttotop {
+    from { -webkit-transform: translateY(0); }
+    to { -webkit-transform: translateY(-100%); }
+}
+
+/* slide up */
+.slideup.out {
+	-webkit-animation-name: fadeout;
+	-webkit-animation-duration: 100ms;
+}
+.slideup.in {
+	-webkit-transform: translateY(0);
+	-webkit-animation-name: slideinfrombottom;
+	-webkit-animation-duration: 250ms;
+}
+.slideup.in.reverse {
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration: 150ms;
+}
+.slideup.out.reverse {
+	-webkit-transform: translateY(100%);
+	-webkit-animation-name: slideouttobottom;
+	-webkit-animation-duration: 200ms;
+}
+@-webkit-keyframes slideinfrombottom {
+    from { -webkit-transform: translateY(100%); }
+    to { -webkit-transform: translateY(0); }
+}
+@-webkit-keyframes slideouttobottom {
+    from { -webkit-transform: translateY(0); }
+    to { -webkit-transform: translateY(100%); }
+}
+
+.flip {
+	-webkit-backface-visibility:hidden;
+	-webkit-transform:translateX(0); /* Needed to work around an iOS 3.1 bug that causes listview thumbs to disappear when -webkit-visibility:hidden is used. */
+	-moz-backface-visibility:hidden;
+	-moz-transform:translateX(0);
+}
+.flip.out {
+	-webkit-transform: rotateY(-90deg) scale(.9);
+	-webkit-animation-name: flipouttoleft;
+	-webkit-animation-duration: 300ms;
+	-moz-transform: rotateY(-90deg) scale(.9);
+	-moz-animation-name: flipouttoleft;
+	-moz-animation-duration: 275ms;
+
+}
+.flip.in {
+	-webkit-animation-name: flipintoright;
+	-webkit-animation-duration: 300ms;
+
+	-moz-animation-name: flipintoright;
+	-moz-animation-duration: 225ms;
+}
+.flip.out.reverse {
+	-webkit-transform: rotateY(90deg) scale(.9);
+	-webkit-animation-name: flipouttoright;
+	-moz-transform: rotateY(90deg) scale(.9);
+	-moz-animation-name: flipouttoright;
+}
+.flip.in.reverse {
+    -webkit-transform: rotateY(-90deg) scale(.9);
+	-webkit-animation-name: flipintoleft;
+	-moz-animation-name: flipintoleft;
+}
+@-webkit-keyframes flipouttoleft {
+    from { -webkit-transform: rotateY(0); }
+    to { -webkit-transform: rotateY(-90deg) scale(.9);}
+}
+
+@-webkit-keyframes flipouttoright {
+    from { -webkit-transform: rotateY(0) ; }
+    to { -webkit-transform: rotateY(90deg) scale(.9); }
+}
+
+@-webkit-keyframes flipintoleft {
+    from { -webkit-transform: rotateY(-90deg)  scale(.9); }
+    to { -webkit-transform: rotateY(0deg) }
+}
+
+@-webkit-keyframes flipintoright {
+    from { -webkit-transform: rotateY(90deg) scale(.9); }
+    to { -webkit-transform: rotateY(0); }
+}
+
+
+.viewport-turn {
+	-webkit-perspective: 1000;
+	position: absolute;
+}
+.turn {
+	-webkit-backface-visibility:hidden;
+	-webkit-transform:translateX(0); 
+	-webkit-transform-origin: 0;
+}
+.turn.out {
+	
+	-webkit-animation-name: turnouttoleft;
+	-webkit-animation-duration: 350ms;
+}
+.turn.in {
+	-webkit-animation-name: turnintoright;
+	-webkit-animation-duration: 250ms;
+}
+.turn.out.reverse {
+	-webkit-transform: rotateY(90deg) scale(.9);
+	-webkit-animation-name: turnouttoright;
+}
+.turn.in.reverse {
+	-webkit-animation-name: turnintoleft;
+}
+@-webkit-keyframes turnouttoleft {
+    0% { -webkit-transform: rotateY(0); }
+    100% { -webkit-transform: rotateY(-90deg);  }
+}
+@-webkit-keyframes turnouttoright {
+    from { -webkit-transform: rotateY(0) ; }
+    to { -webkit-transform: rotateY(90deg) scale(.9); }
+}
+@-webkit-keyframes turnintoleft {
+    from { -webkit-transform: rotateY(-90deg) scale(.9); }
+    to { -webkit-transform: rotateY(0); }
+    from { -webkit-transform: rotateY(90deg) scale(.9); }
+}
+@-webkit-keyframes turnintoright {
+    to { -webkit-transform: rotateY(0); }
+}
+/* flow transition */
+.flow {
+	-webkit-transform-origin: 50% 30%;
+	-webkit-box-shadow: 0 0 20px rgba(0,0,0,.4);
+}
+.ui-dialog.flow {
+	-webkit-transform-origin: none;
+	-webkit-box-shadow: none;
+}
+.flow.out {
+	-webkit-transform: translateX(-100%) scale(.7);
+	-webkit-animation-name: flowouttoleft;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-duration: 550ms;
+}
+.flow.in {
+	-webkit-transform: translateX(0) scale(1);
+	-webkit-animation-name: flowinfromright;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-duration: 550ms;
+}
+.flow.out.reverse {
+	-webkit-transform: translateX(100%);
+	-webkit-animation-name: flowouttoright;
+}
+.flow.in.reverse {
+	-webkit-animation-name: flowinfromleft;
+}
+@-webkit-keyframes flowouttoleft {
+    0% { -webkit-transform: translateX(0) scale(1); opacity:1;}
+	70%, 80% { -webkit-transform: translateX(0) scale(.7);opacity:.6; }
+    100% { -webkit-transform: translateX(-100%) scale(.7);opacity:.4; }
+}
+@-webkit-keyframes flowouttoright {
+    0% { -webkit-transform: translateX(0) scale(1);opacity:1; }
+	70%, 80% { -webkit-transform: translateX(0) scale(.7); opacity:.6; }
+    100% { -webkit-transform:  translateX(100%) scale(.7);opacity:.4;  }
+}
+@-webkit-keyframes flowinfromleft {
+    0% { -webkit-transform: translateX(-100%) scale(.7); opacity:.4;}
+	20%, 30% { -webkit-transform: translateX(0) scale(.7); opacity:.6;}
+    100% { -webkit-transform: translateX(0) scale(1);opacity:1; }
+}
+@-webkit-keyframes flowinfromright {
+    0% { -webkit-transform: translateX(100%) scale(.7);opacity:.4; }
+	20%, 30% { -webkit-transform: translateX(0) scale(.7);opacity:.6; }
+    100% { -webkit-transform: translateX(0) scale(1);opacity:1; }
+}
+
+

@@ -1,0 +1,149 @@
+﻿<div class="os-top"><a href="#" class="page-back">返回</a><img src="theme/default/images/logo.png" class="m-logo"/><a href="#" class="btn-serve"></a></div>
+    <div class="os-order">
+        <div class="os-order-top">
+            <a href="#" class="call-service btn-orange">呼叫服务</a>
+            <a href="#" id="submit-order-all" class="btn-gray">提交订单</a>
+            <a href="#" class="btn-red">结账</a>
+            <!---->
+
+            <div class="rt-info">
+                <div class="no">台号：<span class="table-num">000</span></div>
+                <div class="num">人数：<span class="person-num">0</span>人</div>
+                <div class="time">就餐时间：<span class="order-time">00:00</span></div>
+            </div>
+        </div>
+        <script id="template-order-cat" type="text/template">
+                    <dt><i class="arrow"></i><span><%=dishType%>：</span><span class="r"><a href="#" class="add btn-orange-2">我要添加<%=dishType%></a> </span></dt>
+                    <dd>
+                        <div class="list-title">
+                            <span class="number">序号</span>
+                            <span class="name">品名</span>
+                            <span class="unit">单位</span>
+                            <span class="price">单价</span>
+                            <span class="quantity">数量</span>
+                            <span class="subtotal">小计</span>
+                            <span class="state">状态</span>
+                            <span class="operate">操作</span>
+                        </div>
+                        <div class="order-list-wrap">
+                            <ol class="order-list"></ol>
+                        </div>
+                    </dd>
+            </script>
+        <script id="template-order-item" type="text/template">
+
+                     <% if(state=="1"){%>
+                        <div class="li-table state-1">
+                        <span class="number">1</span>
+                        <span class="name"><%=dishName%></span>
+                        <span class="unit"><%=saleUnitName%></span>
+                        <span class="price"><%=price%></span>
+                        <span class="quantity">
+                            <a href="javascript:void(0)" class="add btn-orange-2">+1</a>
+                            <a href="javascript:void(0)" class="minus btn-gray-2">-1</a>
+                            <select>
+                                    <%_.each(_.range(0,ordNum>10?ordNum+1:11),function(item,index){%>
+                                        <%if(item==ordNum){%>
+                                            <option selected="selected"><%=item%></option>
+                                        <%}else{%>
+                                            <option><%=item%></option>
+                                        <%}%>
+                                    <%});%>
+                                </select>
+                        </span>
+                        <span class="subtotal"><%=parsePrice(price*ordNum)%></span>
+                        <span class="state"><span class="state-icon">未落单</span></span>
+                        <span class="operate"><a href="#" class="submit-item btn-orange-2">下单</a><a href="#" class="cancel-item btn-gray-2">取消</a></span>
+                        </div>
+                     <%}else if(state=="2"){%>
+                        <div class="li-table state-2">
+                        <span class="number">1</span>
+                        <span class="name"><%=dishName%></span>
+                        <span class="unit"><%=saleUnitName%></span>
+                        <span class="price"><%=price%></span>
+                        <span class="quantity">
+                            <%=total%>
+                        </span>
+                        <span class="subtotal"><%=parsePrice(price*total)%></span>
+                        <span class="state"><span class="state-icon">已下单</span></span>
+                        <span class="operate"><a href="#" class="cancel-order btn-gray-2">退单</a><a href="#" class="btn-gray-2">挂起</a><a href="#" class="superaddition btn-orange-2">添加</a></span>
+                    <%}else if(state=="3"){%>
+                        <div class="li-table state-3">
+                        <span class="number">1</span>
+                        <span class="name"><%=dishName%></span>
+                        <span class="unit"><%=saleUnitName%></span>
+                        <span class="price"><%=price%></span>
+                        <span class="quantity">
+                            <%=total%>
+                        </span>
+                        <span class="subtotal"><%=parsePrice(price*total)%></span>
+                        <span class="state"><span class="state-icon">已确认</span></span>
+                        <span class="operate"><a href="#" class="btn-gray-2">挂起</a><a href="#" class="superaddition btn-orange-2">添加</a></span>
+                        </div>
+                    <%}else if(state=="4"){%>
+                        <div class="li-table state-4">
+                        <span class="number">1</span>
+                        <span class="name"><%=dishName%></span>
+                        <span class="unit"><%=saleUnitName%></span>
+                        <span class="price"><%=price%></span>
+                        <span class="quantity">
+                            <%=total%>
+                        </span>
+                        <span class="subtotal"><%=parsePrice(price*total)%></span>
+                        <span class="state"><span class="state-icon">制作中</span></span>
+                        <span class="operate"><a href="#" class="btn-gray-2">上菜</a><a href="#" class="btn-gray-2">催菜</a><a href="#" class="superaddition btn-orange-2">添加</a></span>
+                        </div>
+                    <%}else if(state=="5"){%>
+                        <div class="li-table state-5">
+                        <span class="number">1</span>
+                        <span class="name"><%=dishName%></span>
+                        <span class="unit"><%=saleUnitName%></span>
+                        <span class="price"><%=price%></span>
+                        <span class="quantity">
+                            <%=total%>
+                        </span>
+                        <span class="subtotal"><%=parsePrice(price*total)%></span>
+                        <span class="state"><span class="state-icon">已上菜</span></span>
+                        <span class="operate"><a href="#" class="superaddition btn-orange-2">添加</a></span>
+                        </div>
+                    <%}else if(state=="0"){%>
+                        <div class="li-table state-0">
+                        <span class="number">1</span>
+                        <span class="name"><%=dishName%></span>
+                        <span class="unit"><%=saleUnitName%></span>
+                        <span class="price"><%=price%></span>
+                        <span class="quantity">
+                            <%=total%>
+                        </span>
+                        <span class="subtotal"><%=parsePrice(price*total)%></span>
+                        <span class="state"><span class="state-icon">已退单</span></span>
+                        <span class="operate"></span>
+                        </div>
+                    <%}%>
+                    
+
+            </script>
+        <div class="os-order-content">
+            <dl id="order-tea-list">
+                <dt><i class="arrow"></i><span>茶位类：</span><span class="r"><a href="#" class="add btn-orange-2">我要添加茶位</a> </span></dt>
+                <dd>
+                    <div class="list-title">
+                        <span class="number">序号</span>
+                            <span class="name">品名</span>
+                            <span class="unit">单位</span>
+                            <span class="price">单价</span>
+                            <span class="quantity">数量</span>
+                            <span class="subtotal">小计</span>
+                            <span class="state">状态</span>
+                            <span class="operate">操作</span>
+                    </div>
+                    <div class="order-list-wrap">
+                        <ol class="order-list">
+                            
+                        </ol>
+                    </div>
+                </dd>
+            </dl>
+            
+        </div>
+    </div>

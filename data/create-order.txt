@@ -1,0 +1,6 @@
+﻿{
+	"state":"1", 
+	"message":"成功'", 
+	"ordId":"20130520", 
+	"ordStartTime":"16:00"
+}

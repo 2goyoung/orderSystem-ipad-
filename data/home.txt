@@ -1,0 +1,181 @@
+﻿{
+    "response": [
+        {
+            "code": 0,
+            "result": [
+                {
+                    "child": [],
+                    "cat": "ipad",
+                    "image": null,
+                    "childid": null,
+                    "pid": 0,
+                    "seotitle": null,
+                    "catid": 174,
+                    "seodesc": null,
+                    "catlevel": 0,
+                    "catname": "ipad"
+                },
+                {
+                    "child": [
+                        {
+                            "list": [
+                                {
+                                    "child": [],
+                                    "cat": "promotion",
+                                    "image": "Image/t1.png",
+                                    "childid": null,
+                                    "pid": 165,
+                                    "seotitle": null,
+                                    "catid": 166,
+                                    "seodesc": null,
+                                    "catlevel": 0,
+                                    "catname": "精品限免"
+                                },
+                                {
+                                    "child": [],
+                                    "cat": "recommend",
+                                    "image": "Image/t2.png",
+                                    "childid": null,
+                                    "pid": 165,
+                                    "seotitle": null,
+                                    "catid": 167,
+                                    "seodesc": null,
+                                    "catlevel": 0,
+                                    "catname": "新品推荐"
+                                },
+                                {
+                                    "child": [],
+                                    "cat": "wanjiazhengba",
+                                    "image": "Image/t3.png",
+                                    "childid": null,
+                                    "pid": 165,
+                                    "seotitle": null,
+                                    "catid": 168,
+                                    "seodesc": null,
+                                    "catlevel": 0,
+                                    "catname": "玩家争霸"
+                                },
+                                {
+                                    "child": [],
+                                    "cat": "xiaobian",
+                                    "image": "Image/t4.png",
+                                    "childid": null,
+                                    "pid": 165,
+                                    "seotitle": null,
+                                    "catid": 169,
+                                    "seodesc": null,
+                                    "catlevel": 0,
+                                    "catname": "小编精选"
+                                },
+                                {
+                                    "child": [],
+                                    "cat": "hot",
+                                    "image": "Image/t5.png",
+                                    "childid": null,
+                                    "pid": 165,
+                                    "seotitle": null,
+                                    "catid": 170,
+                                    "seodesc": null,
+                                    "catlevel": 0,
+                                    "catname": "热门活动"
+                                },
+                                {
+                                    "child": [
+                                        {
+                                            "child": [],
+                                            "cat": "test",
+                                            "image": null,
+                                            "childid": null,
+                                            "pid": 171,
+                                            "seotitle": null,
+                                            "catid": 180,
+                                            "seodesc": null,
+                                            "catlevel": 0,
+                                            "catname": "test"
+                                        }
+                                    ],
+                                    "cat": "hotrank",
+                                    "image": "Image/t6.png",
+                                    "childid": "180",
+                                    "pid": 165,
+                                    "seotitle": null,
+                                    "catid": 171,
+                                    "seodesc": null,
+                                    "catlevel": 0,
+                                    "catname": "热门排行榜"
+                                }
+                            ],
+                            "cat": "index",
+                            "image": null,
+                            "childid": "180,166,167,168,169,170,171,173,178,180",
+                            "pid": 164,
+                            "seotitle": null,
+                            "catid": 165,
+                            "seodesc": null,
+                            "catlevel": 0,
+                            "catname": "首页"
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [],
+                                    "cat": "software",
+                                    "image": null,
+                                    "childid": null,
+                                    "pid": 172,
+                                    "seotitle": null,
+                                    "catid": 176,
+                                    "seodesc": null,
+                                    "catlevel": 0,
+                                    "catname": "软件"
+                                },
+                                {
+                                    "child": [],
+                                    "cat": "game",
+                                    "image": null,
+                                    "childid": null,
+                                    "pid": 172,
+                                    "seotitle": null,
+                                    "catid": 177,
+                                    "seodesc": null,
+                                    "catlevel": 0,
+                                    "catname": "游戏"
+                                }
+                            ],
+                            "cat": "android",
+                            "image": null,
+                            "childid": "176,177",
+                            "pid": 164,
+                            "seotitle": null,
+                            "catid": 172,
+                            "seodesc": null,
+                            "catlevel": 0,
+                            "catname": "android"
+                        },
+                        {
+                            "child": [],
+                            "cat": "ios",
+                            "image": null,
+                            "childid": null,
+                            "pid": 164,
+                            "seotitle": null,
+                            "catid": 179,
+                            "seodesc": null,
+                            "catlevel": 0,
+                            "catname": "ios"
+                        }
+                    ],
+                    "cat": "web",
+                    "image": null,
+                    "childid": "180,166,167,168,169,170,171,173,178,180,180,166,167,168,169,170,171,173,178,180,165,166,167,168,169,170,171,172,173,176,177,178,179,180",
+                    "pid": 0,
+                    "seotitle": null,
+                    "catid": 164,
+                    "seodesc": null,
+                    "catlevel": 0,
+                    "catname": "web"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+﻿[
+        {
+            "dishId": "t01",
+            "dishName": "铁观音（普通）",
+            "remark": "",
+            "salePrices": [{
+                "saleId": "01",
+                "saleType": 1,
+                "saleUnitName": "位",
+                "price": "5.00"
+				}]
+        },
+        {
+            "dishId": "t02",
+            "dishName": "铁观音（极品）",
+            "remark": "",
+            "salePrices": [{
+                "saleId": "02",
+                "saleType": 1,
+                "saleUnitName": "位",
+                "price": "15.00"
+				}]
+        },
+        {
+            "dishId": "t03",
+            "dishName": "普洱（普通）",
+            "remark": "",
+            "salePrices": [{
+                "saleId": "03",
+                "saleType": 1,
+                "saleUnitName": "位",
+                "price": "5.00"
+            }]
+        },
+        {
+            "dishId": "t04",
+            "dishName": "普洱（陈年）",
+            "remark": "",
+            "salePrices": [{
+                "saleId": "04",
+                "saleType": 1,
+                "saleUnitName": "位",
+                "price": "15.00"
+            }]
+        },
+        {
+            "dishId": "t05",
+            "dishName": "普洱（上等）",
+            "remark": "",
+            "salePrices": [{
+                "saleId": "05",
+                "saleType": 1,
+                "saleUnitName": "位",
+                "price": "20.00"
+            }]
+        },
+        {
+            "dishId": "t06",
+            "dishName": "龙井（普通）",
+            "remark": "",
+            "salePrices": [{
+                "saleId": "06",
+                "saleType": 1,
+                "saleUnitName": "位",
+                "price": "5.40"
+            }]
+        },
+        {
+            "dishId": "t07",
+            "dishName": "菊花",
+            "remark": "",
+            "salePrices": [{
+                "saleId": "07",
+                "saleType": 1,
+                "saleUnitName": "位",
+                "price": "5.00"
+            }]
+        },
+        {
+            "dishId": "t08",
+            "dishName": "人参五龙",
+            "remark": "",
+            "salePrices": [{
+                "saleId": "08",
+                "saleType": 1,
+                "saleUnitName": "位",
+                "price": "15.00"
+            }]
+        }
+    ]

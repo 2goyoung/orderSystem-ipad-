@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<!--<html manifest="site.manifest" >-->
+<head> 
+    <title>点餐系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style"  content="default" /> 
+    <meta name="format-detection" content="telephone=no"  />
+    <meta id="viewport" name="viewport" content="user-scalable=no"/>
+    <meta name="baidu-tc-verification" content="487aa112f7bc9fc169e660b1be9298de" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/icon-02-72.png" />  
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/icon-02-114.png" />  
+    <link rel="apple-touch-startup-image" media="(min-device-width: 768px) and (orientation: landscape)" href="images/splash-screen-1024x748.png" />  
+    <link rel="apple-touch-startup-image" media="(min-device-width: 768px) and (orientation: portrait)" href="images/splash-screen-768x1004.png" />  
+    <link rel="stylesheet" href="css/os-layout.css" />
+    <link href="css/os-all.css" rel="stylesheet" />
+    <link href="css/os-animate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="theme/default/css/os-default.css" />
+</head>
+<body>
+
+    <div id="os-page"></div><!--页面容器-->
+    
+    
+    <script src="js/library/zepto.js"></script>
+    <script src="js/library/underscore.js"></script>
+    <script src="js/library/backbone-1.0.0.js"></script>
+    <script src="js/extend/cxui-page.js"></script>
+    <script src="js/extend/iscroll.js"></script>
+    <script src="js/extend/zepto.livequery.min.js"></script>
+    <script src="js/extend/md5.js"></script>
+    <script src="js/os-config.js"></script>
+    <script src="js/system/os-Model.js"></script>
+    <script src="js/system/os-Collection.js"></script>
+    <script src="js/system/os-View.js"></script>
+    <script src="js/os-common.js"></script>
+    
+   
+    <script>
+
+            //$('input[type="submit"]').livequery('tap click',function (e) {
+            //    //获取用户名密码
+            //    var userName = $('#u-name').val(), userPw = $('#u-pw');
+
+            //    ospage.openPage({
+            //        pageId: "channel",
+            //        pageUrl: 'ajax-channel.html',
+            //        pageTitle: "点餐系统-选台页",
+            //        data: { user: userName, password: userPw },
+            //        loadingText: '登录中...',
+            //        animateClass: "pop in",
+            //        loaded: true,
+            //        ajaxCallback: function () {
+            //            //$('#os-login').hide();
+            //        },
+            //        callback: function () {
+            //            //初始化滚动条
+            //            iscroll.tableList = [];
+            //            $('.table-content').each(function (i, n) {
+            //                if (i == 0) { $(this).addClass('active'); }
+            //                iscroll.tableList[i] = new iScroll(n);
+            //            });
+            //            iscroll.teasList = new iScroll('teas-list');
+            //        }
+            //    });
+            //    e.preventDefault();
+            //});
+           
+            //注销
+            //$('.os-top .btn-logout').livequery('tap click', function (e) {
+            //    $('#os-login').show();
+            //    ospage.closePage({
+            //        pageId: "channel",
+            //        animateClass: 'pop out reverse',
+            //        remove: true
+            //    });
+            //    e.preventDefault();
+            //});
+         
+        
+
+        //确认开台
+            //$('.c-panel .btn-ok').livequery('tap', function () {
+            //    ospage.openPage({
+            //        pageId: "guide",
+            //        pageTitle: "",
+            //        pageUrl:"ajax-guide.html",
+            //        loadingText: "开台中...",
+            //        animateClass: 'pop in',
+            //        ajaxCallback: function () {
+            //            $('#')
+            //        }
+            //    });
+            //})
+        //我要点餐
+            $('.guide-list .menu').livequery('tap', function () {
+
+            });
+    </script>
+</body>
+</html>

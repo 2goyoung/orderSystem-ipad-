@@ -1,0 +1,22 @@
+﻿[
+	{
+		"id":"type001",
+		"dishType":"特色菜品"
+	},
+	{
+		"id":"type003",
+		"dishType":"凉菜"
+	},
+	{
+		"id":"type004",
+		"dishType":"烟酒"
+	},
+	{
+		"id":"type005",
+		"dishType":"熟食类"
+	},
+	{
+		"id":"type006",
+		"dishType":"饮料类"
+	}
+]

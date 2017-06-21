@@ -1,0 +1,11 @@
+﻿{
+	"state":"1",
+	"message":"",
+	"ordInfo":{
+		"ordId":"20130520", 
+		"cusNum":"12",
+		"dishNum":"2",
+		"ordStartTime":"10:40",
+		"dinCodes":"003"
+	}  
+}
